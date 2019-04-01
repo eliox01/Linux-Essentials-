@@ -1,0 +1,52 @@
+curl https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.0.5.tar.xz -o kernel.tar.xz
+curl https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.0.5.tar.xz -O 
+ls -lh *.xz
+wget https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.0.5.tar.xz
+#to install shh server on ubuntu server
+elias@dell:~$ sudo apt install openssh-server
+$ systemctl status sshd
+$ sudo ufw status
+$ sudo ufw allow 22/tcp
+$ sudo systemctl restart ufw
+$ sudo ufw enable
+$ sudo ufw status
+
+
+# secure copy protocol
+scp remoteuser@hots:notes /home/localuser/Documents
+scp remoteuser@hots:/var/log/syslog /home/localuser/Documents
+scp /home/localuser/Documents/othernotes remoteuser@hots:Documents
+
+
+truncate file 
+elias@dell:~$ ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/elias/.ssh/id_rsa): 
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /home/elias/.ssh/id_rsa.
+Your public key has been saved in /home/elias/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:WD9CdQK+wt7vaQ2Y4Zv4HWP7fwnzEsLzHnT7qb9yxJI elias@dell
+The key's randomart image is:
++---[RSA 2048]----+
+|        ..o .    |
+|       . . o     |
+|        +        |
+|     . +.o       |
+|      +.S++  .o. |
+|     . o+..=.E.o.|
+|      ...o+o+.B..|
+|      . o+.=.+.++|
+|       ..o*.o+B=o|
++----[SHA256]-----+
+
+
+my Publick key 
+elias@dell:~$ cat .ssh/id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDdDNgfWSOUfOIyJTYX+DJZh76jxogyIVvHqo2MpcEzFkXsszSNhN9rfHjtp2x84w7/IsdOzn6RtQHozNNA/2/oIPPdnQcCzD/t80KQ9rUon74ymNE46P1pIwNvn65s56/Erku1nllZUxb+B5Ynt6WGz/2Jln42a4IKkbXAgzgWMQo0/nvkUf0zn6uNbSYvASx8F0Ewc1FdZFx3mCrmo18lm8A482+yKHcgsWouApTzk4kpZdmlPCd+h1UqxmeUe0pXzIWwUmA2KHO9qaUCVwmt0NnkVmUFseugaWhGOIo8dFEzYR0P4SP1neu6krw3X8iz6B5ZU+zebACoEL3ppzpZ elias@dell
+
+# to get my private key 
+elias@dell:~$ cat .ssh/id_rsa
+# to keep checking for suspicious activity check log file 
+$ tail /var/log/auth.log
